@@ -103,6 +103,10 @@ $font-weight: 400;
     border: 1px solid #dbffdb;
   }
 
+  .c {
+    text-align: center;
+  }
+
   .vbig,
   .big,
   big {
@@ -197,19 +201,18 @@ $font-weight: 400;
     padding: size(2, 0.5) size(1, 0.5);
   }
 
+  .grid.fp {
+    box-sizing: border-box;
+    min-height: 100vh;
+    align-items: center;
+  }
+
   .zh {
     line-height: 1;
   }
 
   .grid > .grid {
     padding: 0;
-  }
-
-  img,
-  video {
-    width: auto !important;
-    max-width: 100% !important;
-    padding: 0 !important;
   }
 
   .grid > .u1  { width:  8.333333% }
@@ -242,7 +245,6 @@ $font-weight: 400;
       padding: size(2, 0.5) size(1, 0.5);
     }
     
-
     .grid > .a  { width: auto; }
     .grid > .m1 { width: 16.666667% }
     .grid > .m2 { width: 33.333333% }
@@ -291,6 +293,25 @@ $font-weight: 400;
       padding: size(2, 0.5) size(1, 0.5);
     }
   }
+
+  img,
+  video {
+    width: auto;
+    max-width: 100%;
+    padding: 0 !important;
+  }
   
-  .hug { padding-top: 0; }
+  .hug, 
+  &.hug { 
+    padding-top: 0; 
+  }
+
+  .hug-bottom, 
+  &.hug-bottom {
+    padding-bottom: 0; 
+  }
+  .spoon, &.spoon {
+    padding-top: 0;
+    padding-bottom: 0; 
+  }
 }
