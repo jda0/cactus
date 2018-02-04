@@ -29,7 +29,7 @@ $font-weight: 400;
 }
 
 .cactus {
-  font-family: Overpass;
+  font-family: $font-body;
   font-size: size(0);
   font-weight: $font-weight;
   line-height: $ratio;
@@ -43,25 +43,55 @@ $font-weight: 400;
     text-decoration: none;
   }
   
-  a:not(.button):after {
+  a:after {
     content: '˚';
     opacity: pow($ratio, -1);
   }
 
-  a.button {
+  button,
+  input,
+  textarea {
+    box-sizing: border-box;
     position: relative;
-    background-color: #e74c3c;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: pow($ratio, -1) * 1em;
+    text-align: baseline;
+    font-family: inherit;
+    padding: 0.25em * pow($ratio, 2) - 0.25em;
+    padding-bottom: 0.25em * pow($ratio, 2) - 0.375em;
+    border: 2px solid #ecf0f1;
+    width: 100%;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  button {
+    background: #ecf0f1;
     padding: 0.5em * pow($ratio, 2) - 0.5em;
     padding-bottom: 0.5em * pow($ratio, 2) - 0.75em;
-    margin-left: 0.25em;
-    top: $ratio * 0.5em - 1em;
-    line-height: 0;
-    height: 0;
-    border-radius: 0.25em;
   }
+
+  // a.button {
+  //   position: relative;
+  //   background-color: #e74c3c;
+  //   color: #fff;
+  //   text-transform: uppercase;
+  //   border-radius: 0.25em;
+  //   white-space: nowrap;
+  //   border: none;
+  //   font-size: pow($ratio, -1) * 1em;
+  //   padding: 0.5em * pow($ratio, 2) - 0.5em;
+  //   padding-bottom: 0.5em * pow($ratio, 2) - 0.75em;
+  //   margin-left: 0.25em;
+  //   margin-right: 0.25em;
+  //   top: $ratio * 0.5em - 1em;
+  //   line-height: 0;
+  //   height: 0;
+  // }
+
+  // a.button:after {
+  //   content: ''
+  // }
 
   &.dev {
     background: #f4f4f4;
@@ -89,7 +119,7 @@ $font-weight: 400;
 
   h1,
   h2 {
-    font-family: "Playfair Display", Overpass;
+    font-family: $font-title;
     font-weight: 400;
     // font-weight: 600;
   }
@@ -100,7 +130,9 @@ $font-weight: 400;
     font-size: pow($ratio, -1) * 1em;
   }
 
-  h3 {
+  h3,
+  button,
+  a.button {
     font-weight: 600;
   }
 
@@ -122,6 +154,10 @@ $font-weight: 400;
     orphans: 3;
   }
 
+  p + * {
+    margin-top: pow($ratio, 1) * 1em
+  }
+
   * + p {
     margin-top: pow($ratio, -1) * 1em;
   }
@@ -131,6 +167,19 @@ $font-weight: 400;
   h3 + p,
   h4 + p {
     margin-top: pow($ratio, -2) * 1em;
+  }
+
+  button.t {
+    background: transparent;
+    border: none;
+    padding: 0;
+    height: auto;
+    color: #e74c3c;
+  }
+
+  button.t:after {
+    content: '˚';
+    opacity: pow($ratio, -1);
   }
 
   & > :not(.nop) {
@@ -227,4 +276,6 @@ $font-weight: 400;
       padding: size(2, 0.5) size(2, 0.5);
     }
   }
+  
+  .hug { padding-top: 0; }
 }
