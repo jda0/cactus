@@ -188,7 +188,7 @@ $font-weight: 400;
 
   .grid {
     display: flex;
-    flex: 1 0 auto;
+    flex: 0 0 auto;
     flex-wrap: wrap;
     justify-content: center;
     padding: size(2, 0.5) size(1, 0.5);
@@ -198,6 +198,10 @@ $font-weight: 400;
     width: 100%;
     box-sizing: border-box;
     padding: size(2, 0.5) size(1, 0.5);
+  }
+
+  .grid > .grid {
+    padding: 0;
   }
 
   img,
