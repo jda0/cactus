@@ -7,4 +7,4 @@ Browser support is currently dependent on support for calc() and Flexbox.
 
 ---
 
-[jamesin.space](jamesin.space)
+[jamesin.space](//jamesin.space)
