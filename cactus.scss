@@ -42,8 +42,13 @@ $font-weight: 400;
     color: #e74c3c;
     text-decoration: none;
   }
+
+  abbr {
+    text-decoration: none;
+  }
   
-  a:after {
+  a:after,
+  abbr:after {
     content: '˚';
     opacity: pow($ratio, -1);
   }
@@ -183,6 +188,10 @@ $font-weight: 400;
     opacity: pow($ratio, -1);
   }
 
+  .fade {
+    opacity: pow($ratio, -1);
+  }
+
   & > :not(.nop) {
     padding: size(2, 0.5) size(1);
   }
@@ -299,6 +308,7 @@ $font-weight: 400;
     }
   }
 
+  canvas,
   img,
   video {
     width: auto;
